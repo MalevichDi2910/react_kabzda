@@ -15,6 +15,7 @@ import {SelectWithValue} from "./Components/Select/Select";
 import {Example1} from "./Components/onOff/ReactMemo";
 import {DifficultCountingExample, HelpsToReactMemo, LikeUseCallbackMemo} from "./Components/onOff/UseMemo";
 import UseState from "./Components/UseState/UseState";
+import Clock from "./Components/Clock/Clock";
 
 
 
@@ -32,7 +33,8 @@ function App(props: any) {
 
             {/*<Example1/>*/}
             {/*<HelpsToReactMemo/>*/}
-            <UseState/>
+            {/*<UseState/>*/}
+            <Clock/>
             {/*<LikeUseCallbackMemo/>*/}
             {/*<DifficultCountingExample/>*/}
             {/*<SelectWithValue*/}
