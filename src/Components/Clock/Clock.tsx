@@ -1,11 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {clearInterval} from "timers";
+import {AnalogClock} from "./AnalogClock";
+import {DigitalClock} from "./DigitalClock";
 
-function Clock() {
+type propsType = {
+    mode?: 'analog' | 'digital'
+}
 
-    const [date, setDate] = useState<Date>(new Date())
+export type ClockViewPropsType = {
+    date: Date
+}
 
-    const stringTime = date.toLocaleString("ru", {hour: 'numeric', minute: 'numeric', second: 'numeric'})
+export const Clock: React.FC <propsType> = (props) => {
+
+    const [date, setDate] = useState(new Date())
 
     useEffect(() => {
 
@@ -18,12 +25,23 @@ function Clock() {
 
     })
 
+    let view;
+
+    switch (props.mode) {
+        case 'analog':
+            view = <AnalogClock date={date}/>
+            break;
+        case 'digital':
+        default:
+            view = <DigitalClock date={date}/>
+    }
+
     return (
         <div>
-            <strong>{stringTime}</strong>
+            {view}
         </div>
     )
 }
 
-export default Clock;
+
 

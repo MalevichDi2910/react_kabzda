@@ -1,32 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import {Rating,RatingValueType} from "./Components/Rating/Rating";
-import Accordion from "./Components/Accordion/Accordion";
-import OnOff from "./Components/onOff/onOff";
-import UncontrolledAccordion from "./Components/UncontrolledAccordion/UncontrolledAccordion";
-import {UncontrolledRating} from "./Components/UncontrolledRating/UncontrolledRating";
-import UncontrolledOnOff from "./Components/UncontrolledOnOff/UncontrolledOnOff";
-import {
-    ControlledCheckbox,
-    ControlledInput, ControlledSelect, GetValueTrackValueUncontrolledInputByButton,
-    UncontrolledInput
-} from "./Components/UncontrolledInput/UncontrolledInput";
-import {SelectWithValue} from "./Components/Select/Select";
-import {Example1} from "./Components/onOff/ReactMemo";
-import {DifficultCountingExample, HelpsToReactMemo, LikeUseCallbackMemo} from "./Components/onOff/UseMemo";
-import UseState from "./Components/UseState/UseState";
-import Clock from "./Components/Clock/Clock";
-
-
+import {Clock} from "./Components/Clock/Clock";
+import {KeysTrackerExample, ResetEffectExample, SetTimeoutExample} from "./UseEffect/UseEffect";
 
 function App(props: any) {
     console.log('App rendering');
 
-    let [ratingValue, setRatingValue] = useState<RatingValueType>(4);
-    let [accordionCollapsed, setCollapsed] = useState<boolean>(false)
-    let [switchOn, setSwitchOn] = useState<boolean>(false)
-    // const onClickHandler = () => console.log('some item was clicked')
-    const[value,setValue] = useState('0')
+    // let [ratingValue, setRatingValue] = useState<RatingValueType>(4);
+    // let [accordionCollapsed, setCollapsed] = useState<boolean>(false)
+    // let [switchOn, setSwitchOn] = useState<boolean>(false)
+    // // const onClickHandler = () => console.log('some item was clicked')
+    // const[value,setValue] = useState('0')
 
     return (
         <div className={'App'}>
@@ -34,7 +18,11 @@ function App(props: any) {
             {/*<Example1/>*/}
             {/*<HelpsToReactMemo/>*/}
             {/*<UseState/>*/}
-            <Clock/>
+            {/*<Clock mode={'analog'}/>*/}
+            {/*<ResetEffectExample/>*/}
+            {/*<KeysTrackerExample/>*/}
+            <SetTimeoutExample/>
+            {/*<DigitalClock mode={'digital'}/>*/}
             {/*<LikeUseCallbackMemo/>*/}
             {/*<DifficultCountingExample/>*/}
             {/*<SelectWithValue*/}
